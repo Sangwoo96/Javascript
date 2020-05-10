@@ -1,0 +1,225 @@
+.header-wrapper {
+  position: fixed;
+  z-index: 2;
+  top: 0px;
+  width: 100%;
+  padding-top: 5px;
+  height: 105px;
+  background: white;
+  box-shadow: 0 13px 27px -5px rgba(50, 50, 93, 0.25),
+    0 8px 16px -8px rgba(0, 0, 0, 0.3), 0 -6px 16px -6px rgba(0, 0, 0, 0.025);
+}
+
+/*z-index는 layer의 순서 즉, 겹칠때 누가 앞에 있을것인지 정하는것
+  position이 fixed, relative, absolute일 때만 적용*/
+
+.chat-body {
+  background-image: url("../images/chatBg.png");
+  /*background가 다른 곳에 들어감 찾아봐야함*/
+  /*10분42초*/
+  min-height: 1000vh;
+}
+
+.chat-body /*body는 기본적으로 padding을 가지고있어서
+            배경을 넣어주기 위해 새로운 클래스이름을
+            만들고 padding을 없애주었다*/
+ {
+  padding: 10px 0px;
+  padding-top: 100px;
+}
+.chat-body .header,
+.chat-body .status-bar {
+  padding: 0px 20px;
+}
+
+.chat-screen .chat__messages {
+  border-top: 1px solid white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0px 20px;
+  padding-top: 30px;
+}
+
+.chat__messages .chat__timestamp {
+  background-color: white;
+  font-size: 12px;
+  padding: 5px 10px;
+  border-radius: 10px;
+  margin-bottom: 30px;
+  box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08);
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.message {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 20px;
+}
+
+@keyframes spin {
+  from {
+    transform: none;
+  }
+  to {
+    transform: rotateY(1turn);
+  }
+}
+.incoming-message img {
+  margin-right: 15px;
+  width: 35px;
+  height: 35px;
+  border-radius: 20px;
+  animation: spin 1s linear infinite;
+}
+
+/*linear, ease-in, ease-out 등 변화하는 속도이다*/
+.message .message__timestamp {
+  color: rgb(102, 98, 98);
+  align-self: flex-end;
+  font-size: 12px;
+  margin: 0px 8px;
+}
+
+.incoming-message {
+  align-self: flex-start;
+}
+
+.outgoing-message {
+  align-self: flex-end;
+}
+
+.message .message__bubble {
+  color: white;
+  font-weight: 600;
+  font-size: 15px;
+  display: block;
+  background-color: white;
+  padding: 10px 15px;
+  border-radius: 25px;
+  box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+.incoming-message .message__author {
+  margin-bottom: 10px;
+  display: block;
+  font-weight: 600;
+  font-size: 13px;
+}
+
+.incoming-message .message__bubble {
+  border-top-left-radius: 0px;
+  background-image: linear-gradient(to right, #24c6dc, #514a9d);
+}
+
+.outgoing-message .message__bubble {
+  border-top-right-radius: 0px;
+  background-image: linear-gradient(to right, #ff512f, #f09819);
+}
+
+.chat__write-container {
+  position: fixed;
+  bottom: 0px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #fcfcfc;
+  width: 100%;
+  margin: 0 auto;
+  left: 0;
+  right: 0;
+}
+
+.chat__icon-left {
+  position: absolute;
+  left: 10px;
+}
+
+.chat__icon-right {
+  position: absolute;
+  right: 10px;
+}
+
+.chat__icon {
+  font-size: 18px;
+  transition: opacity 0.2s ease-in-out;
+}
+
+.chat__write {
+  bottom: 0px;
+  width: 100%;
+  border-radius: 0;
+  padding: 20px 60px;
+  width: 100%;
+  border: none;
+  font-size: 14px;
+}
+
+@keyframes float {
+  0% {
+    box-shadow: 0 30px 60px -12px rgba(50, 50, 93, 0.25),
+      0 18px 36px -18px rgba(0, 0, 0, 0.3),
+      0 -12px 36px -8px rgba(0, 0, 0, 0.025);
+  }
+  50% {
+    box-shadow: 0 30px 60px -60px rgba(50, 50, 93, 0.25),
+      0 18px 36px -18px rgba(0, 0, 0, 0.3),
+      0 -12px 36px -8px rgba(0, 0, 0, 0.025);
+  }
+  100% {
+    box-shadow: 0 30px 60px -12px rgba(50, 50, 93, 0.25),
+      0 18px 36px -18px rgba(0, 0, 0, 0.3),
+      0 -12px 36px -8px rgba(0, 0, 0, 0.025);
+  }
+}
+/*input창을 클릭해도 라인이 안보인다. 디폴트 값으로 라인 보인다*/
+/*focus는 그 클래스에 클릭했을때*/
+.chat__write:focus {
+  outline: none;
+  width: 80%;
+  margin: 0 auto;
+  border-radius: 40px;
+  transition: width 0.5s ease-in, border-radius 0.5s ease-in,
+    transform 0.5s ease-in;
+  transform: translateY(-100px);
+  box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08);
+  animation: float 3s infinite forwards;
+}
+/*forwards는 변화 후, 즉 마지막 상태를 유지한다는 의미이다*/
+/*chatwrite에 클릭했을때 chat__icon은 안보인다 ~는 다른 클래스에 영향을
+주고 싶을때 쓴다 chaticon이 html에서 input 밑에 있어야지만 적용됨*/
+.chat__write:focus ~ .chat__icon {
+  opacity: 0;
+}
+
+@keyframes incomingAnim {
+  from {
+    opacity: 0;
+    transform: translateX(-200px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.incoming-message {
+  animation: incomingAnim 0.5s ease-out forwards;
+}
+
+@keyframes outgoingAnim {
+  from {
+    opacity: 0;
+    transform: translateX(200px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.outgoing-message {
+  animation: outgoingAnim 0.5s ease-out forwards;
+}
+/*forwards는 변화 후, 즉 마지막 상태를 유지한다는 의미이다*/

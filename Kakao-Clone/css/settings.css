@@ -1,0 +1,22 @@
+.settings__sections {
+  border-top: 1px solid #f7f7f7;
+  padding: 30px 0px;
+}
+
+.settings .settings__setting {
+  padding-bottom: 30px;
+}
+
+.settings .settings__list :last-child {
+  padding-bottom: 0;
+}
+
+.settings__sections i {
+  margin-right: 20px;
+  font-size: 18px;
+}
+
+.settings__setting .settings__title {
+  font-size: 18px;
+  font-weight: 300;
+}

@@ -1,0 +1,164 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600&display=swap");
+
+* {
+  font-family: "Montserrat", sans-serif;
+}
+body {
+  background-color: #2c3e50;
+  color: white;
+  height: 100%;
+  width: 100%;
+}
+.form,
+.greetings,
+.js-question,
+.js-ToDoForm,
+.form-question {
+  display: none;
+}
+
+.showing {
+  display: block;
+}
+
+.js-weather,
+.center,
+.center-below,
+.center-below-below,
+.end {
+  position: absolute;
+}
+
+.js-weather {
+  right: 10px;
+  top: 10px;
+}
+
+.center {
+  display: block;
+  text-align: center;
+  top: 14%;
+  width: 100%;
+  font-size: 60px;
+}
+
+.form-span {
+  display: block;
+  width: 100%;
+  position: absolute;
+  text-align: center;
+  font-size: 30px;
+  top: 43%;
+  font-weight: 600;
+}
+
+.form {
+  position: absolute;
+  text-align: center;
+  width: 100%;
+  top: 50%;
+}
+
+.center-below {
+  margin: 0px;
+  padding: 0px;
+  display: block;
+  top: 43%;
+  text-align: center;
+  width: 100%;
+  font-size: 30px;
+  font-weight: 600;
+}
+
+.todo-question {
+  display: block;
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  font-size: 30px;
+  font-weight: 600;
+  top: 55%;
+}
+
+.center-below-below {
+  display: block;
+  top: 61%;
+  text-align: center;
+  width: 100%;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.bgImage {
+  position: absolute;
+  /*독립적인 위치가됨*/
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  animation: fadeIn 0.1s linear;
+}
+.end {
+  display: block;
+  top: 75%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 40px;
+  animation: fadeIn 0.7s linear;
+}
+
+li {
+  list-style: none;
+}
+
+.todo-input {
+  background-color: transparent;
+  width: 67%;
+  height: 40px;
+  border: none;
+  border-bottom: 3px solid white;
+  text-align: center;
+  cursor: text;
+  color: white;
+  font-size: 35px;
+}
+
+.form-input {
+  background-color: transparent;
+  width: 47%;
+  height: 40px;
+  border: none;
+  border-bottom: 3px solid white;
+  text-align: center;
+  cursor: text;
+  color: white;
+  font-size: 35px;
+}
+input:focus {
+  outline: none;
+}
+
+.fa-square {
+  padding-right: 10px;
+}
+
+/*
+.fa-square {
+}
+*/
+
+.fa-arrow-right {
+  padding-left: 10px;
+}
+
+.fa-arrow-left {
+  padding-right: 10px;
+}
